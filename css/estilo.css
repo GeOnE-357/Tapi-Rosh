@@ -24,22 +24,10 @@ main
 		grid-template-columns: repeat(4,85px);
 	}
 
-.col1
-	{
-		background-color: red;
-	}
 
-.col2
-	{
-		background-color: green;
-	}
-
-.col3
-	{
-		background-color: yellow;
-	}
-
-.col4
+.factura
 	{
 		background-color: blue;
+		width: 100%;
+		height: 100%;
 	}

@@ -116,6 +116,9 @@ function Factura(tip,col)
 			}
 	}
 
+
+//---------------- Funciones Generales ----------------
+
 function numero(max)
 	{
 		// Retorna un entero aleatorio entre min (incluido) y max (excluido)

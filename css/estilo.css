@@ -24,6 +24,13 @@ main
 		grid-template-columns: repeat(4,85px);
 	}
 
+.col1, .col2, .col3, .col4
+	{
+
+		border:dashed;
+		border-color: rgba(0,0,0,0.5);
+		border-width: 1px;	
+	}
 
 .factura
 	{

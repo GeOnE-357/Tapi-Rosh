@@ -2,6 +2,9 @@ const juego=document.getElementsByClassName("Nivel")[0];
 tablero();
 let factu = new Factura(numero(4),numero(5));
 let tapi = new Tapi(1);
+factu.dibujar();
+setInterval(function(){factu.bajar()},factu.velocidad);
+
 
 function tablero()
 	{
@@ -26,6 +29,8 @@ function Tapi(col)
 	{
 		this.columna=col;
 		this.fila=6;
+		this.puntos=0;
+		this.vidas=3;
 		//Funciones del objeto
 		this.dibujar=dibujar;
 		this.mover=mover;
@@ -58,11 +63,12 @@ function Tapi(col)
 
 //---------------- Objetos Factura ----------------
 
-function Factura(tip,col, )
+function Factura(tip,col)
 	{
 		this.tipo=tip;
 		this.fila=1;
 		this.columna=col;
+		this.puntos=5;
 		this.velocidad=1000;
 		//Funciones del objeto
 		this.dibujar=dibujar;
@@ -79,11 +85,26 @@ function Factura(tip,col, )
 		
 		function bajar()
 			{
-				if(this.fila<6)
+				this.borrar();
+				if(this.fila<5)
 					{
-						this.borrar();
 						this.fila+=1;
 						this.dibujar();
+					}
+				else
+					{
+						
+						if(tapi.columna==this.columna)
+							{
+								tapi.puntos+=this.puntos;
+							}
+						else
+							{
+								this.fila+=1;
+								this.dibujar();
+								tapi.vidas-=1;
+								this.borrar();
+							}
 					}
 			}
 
@@ -93,8 +114,6 @@ function Factura(tip,col, )
 				let bloque=document.getElementsByClassName("col"+this.columna+" fil"+num)[0];
 				bloque.removeChild(bloque.firstChild);
 			}
-
-		
 	}
 
 function numero(max)

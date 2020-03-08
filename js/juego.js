@@ -1,6 +1,7 @@
 const juego=document.getElementsByClassName("Nivel")[0];
 tablero();
 let factu = new Factura(numero(4),numero(5));
+let tapi = new Tapi(1);
 
 function tablero()
 	{
@@ -12,39 +13,48 @@ function tablero()
 						num=a+1;
 						num2=i+1;
 						div.className="col"+num+" fil"+num2;
-						div.onclick=function(){moverTapi(div.className)};
+						div.onclick=function(){tapi.mover(a+1)};
 						juego.appendChild(div);
 					}
 			}
 	}
 
+
 //---------------- Objetos Tapi ----------------
+
 function Tapi(col)
 	{
 		this.columna=col;
 		this.fila=6;
+		//Funciones del objeto
+		this.dibujar=dibujar;
+		this.mover=mover;
+		this.borrar=borrar;
 
+
+		function dibujar()
+			{
+				let bloque=document.getElementsByClassName("col"+this.columna+" fil"+this.fila)[0];
+				let dibu=document.createElement("div");
+				dibu.className="tapi";
+				bloque.appendChild(dibu);	
+			}
 
 		function mover(col)
 			{
-				let ulti=document.getElementsByClassName("fil6");
-				for(let i=0; i <4;i++)
-					{
-						num=i+1;
-						ulti[i].className="col"+num+" fil6";
-					}
-				if(col.slice(5) != "fil6")
-					{
-						pos=col.slice(0,4)+" fil6";
-					}
-				else
-					{
-						pos=col;
-					}
-				let mov=document.getElementsByClassName(pos)[0];
-				mov.className+=" mov";
+				this.borrar();
+				this.columna=col;
+				this.dibujar();
+			}
+
+		function borrar()
+			{
+				num=this.columna;
+				let bloque=document.getElementsByClassName("col"+this.columna+" fil"+this.fila)[0];
+				bloque.removeChild(bloque.firstChild);
 			}
 	}
+
 
 //---------------- Objetos Factura ----------------
 
@@ -61,30 +71,30 @@ function Factura(tip,col, )
 
 		function dibujar()
 			{
-				if(this.fila>1)
-					{
-						this.borrar();		
-					}
 				let bloque=document.getElementsByClassName("col"+this.columna+" fil"+this.fila)[0];
 				let dibu=document.createElement("div");
 				dibu.className="factura";
 				bloque.appendChild(dibu);
 			}
 		
-		function borrar()
-			{
-				num=this.fila-1;
-				let bloque=document.getElementsByClassName("col"+this.columna+" fil"+num)[0];
-				bloque.removeChild(bloque.firstChild);
-			}
-
 		function bajar()
 			{
 				if(this.fila<6)
 					{
+						this.borrar();
 						this.fila+=1;
+						this.dibujar();
 					}
 			}
+
+		function borrar()
+			{
+				let num=this.fila;
+				let bloque=document.getElementsByClassName("col"+this.columna+" fil"+num)[0];
+				bloque.removeChild(bloque.firstChild);
+			}
+
+		
 	}
 
 function numero(max)

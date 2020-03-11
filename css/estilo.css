@@ -11,8 +11,21 @@ main
 		width: 100%;
 		height: 100vh;
 		display: grid;
-		align-items: center;
 		justify-content: center;
+	}
+
+.Info
+	{
+		display: grid;
+		grid-template-columns: 2fr 1fr 2fr 1fr;
+		grid-template-rows: 1fr;
+		height: 30px;
+		align-self: center;
+	}
+
+.vidas, .puntos
+	{
+		justify-content: center; 
 	}
 
 .Nivel
@@ -22,6 +35,7 @@ main
 		display: grid;
 		grid-template-rows: repeat(6, 85px);
 		grid-template-columns: repeat(4,85px);
+		align-self: start;
 	}
 
 .col1, .col2, .col3, .col4

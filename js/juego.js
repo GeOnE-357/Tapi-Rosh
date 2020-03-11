@@ -1,9 +1,18 @@
 const juego=document.getElementsByClassName("Nivel")[0];
-tablero();
-let factu = new Factura(numero(4),numero(5));
+let puntos=document.getElementById("puntos");
+let vidas=document.getElementById("vidas");
 let tapi = new Tapi(1);
-factu.dibujar();
-setInterval(function(){factu.bajar()},factu.velocidad);
+inicio();
+
+
+function inicio()
+	{
+		tablero();
+		tapi.dibujar();
+		// Velocidad inicial ponerla en 800, y empezar a bajar de a 200.
+		// Velocidad Limites 800 - 400.
+		let spawn=setInterval(enemigos,800);
+	}
 
 
 function tablero()
@@ -34,7 +43,6 @@ function Tapi(col)
 		//Funciones del objeto
 		this.dibujar=dibujar;
 		this.mover=mover;
-		this.borrar=borrar;
 
 
 		function dibujar()
@@ -47,21 +55,21 @@ function Tapi(col)
 
 		function mover(col)
 			{
-				this.borrar();
+				borrar(this.columna, this.fila);
 				this.columna=col;
 				this.dibujar();
-			}
-
-		function borrar()
-			{
-				num=this.columna;
-				let bloque=document.getElementsByClassName("col"+this.columna+" fil"+this.fila)[0];
-				bloque.removeChild(bloque.firstChild);
 			}
 	}
 
 
 //---------------- Objetos Factura ----------------
+
+function enemigos()
+	{
+		let factu = new Factura(numero(4),numero(5));
+		factu.dibujar();
+		factu.tiempo=setInterval(function(){factu.bajar()},factu.velocidad);
+	}
 
 function Factura(tip,col)
 	{
@@ -69,11 +77,12 @@ function Factura(tip,col)
 		this.fila=1;
 		this.columna=col;
 		this.puntos=5;
-		this.velocidad=1000;
+		this.velocidad=200;
+
 		//Funciones del objeto
 		this.dibujar=dibujar;
 		this.bajar=bajar;
-		this.borrar=borrar;
+		this.tiempo;
 
 		function dibujar()
 			{
@@ -85,7 +94,7 @@ function Factura(tip,col)
 		
 		function bajar()
 			{
-				this.borrar();
+				borrar(this.columna, this.fila);
 				if(this.fila<5)
 					{
 						this.fila+=1;
@@ -93,35 +102,60 @@ function Factura(tip,col)
 					}
 				else
 					{
-						
 						if(tapi.columna==this.columna)
 							{
 								tapi.puntos+=this.puntos;
+								puntos.innerHTML=tapi.puntos;
 							}
 						else
 							{
 								this.fila+=1;
 								this.dibujar();
 								tapi.vidas-=1;
-								this.borrar();
+								setTimeout(borrar,100,this.columna,this.fila);
+								vidas.innerHTML=tapi.vidas;
 							}
+						clearInterval(this.tiempo);
 					}
-			}
-
-		function borrar()
-			{
-				let num=this.fila;
-				let bloque=document.getElementsByClassName("col"+this.columna+" fil"+num)[0];
-				bloque.removeChild(bloque.firstChild);
 			}
 	}
 
 
 //---------------- Funciones Generales ----------------
 
+window.addEventListener("keydown", teclado,false);
+
 function numero(max)
 	{
 		// Retorna un entero aleatorio entre min (incluido) y max (excluido)
 		// ¡Usando Math.round() te dará una distribución no-uniforme!
   		return Math.floor(Math.random() * (max - 1)) + 1;
+	}
+
+
+function borrar(columna,fila)
+	{
+		// Funcion para remover elementos en una columna "X" y fila "Y".
+		let bloque=document.getElementsByClassName("col"+columna+" fil"+fila)[0];
+		bloque.removeChild(bloque.firstChild);
+	}
+
+function teclado(event)
+	{
+  		if(event.keyCode==39 || event.keyCode==68)
+  			{
+  				if(tapi.columna<4)
+  					{
+  						tapi.mover(tapi.columna+1);		
+  					}
+  				
+  			}
+  		if(event.keyCode==37 || event.keyCode==65)
+  			{
+  				if(tapi.columna>1)
+					{
+						tapi.mover(tapi.columna-1);		
+					}
+  						
+  			}
 	}

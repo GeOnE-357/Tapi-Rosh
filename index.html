@@ -13,19 +13,42 @@
 	<meta name="Robots" content="all"/>
 	<!-- "Prompt" Google Font-->
 	<link href="https://fonts.googleapis.com/css?family=Prompt:300i,400,500,600&display=swap" rel="stylesheet"> 
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">	
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">	
+	<link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
 </head>
 <body>
 	<main>
-		<section class="Info">
-			<h3>Puntos:</h3>
-			<h3 id="puntos">0</h3>
-			<h3>Vidas:</h3>
-			<h3 id="vidas">3</h3>
-		</section>
-		<section class="Nivel">
-		</section>
+		<article id="Menu" class="Escena mostrar">
+			<div class="contenido">
+				<p onclick="cambioEscena(3)" class="boton">Empezar</p>
+				<p onclick="cambioEscena(1)" class="boton">Creditos</p>
+				<p onclick="cambioEscena(2)" class="boton">Como jugar?</p>
+			</div>
+		</article>
+		<article id="Creditos" class="Escena">
+			<div class="contenido">
+				<p onclick="cambioEscena(0)" class="boton">Volver</p>
+			</div>
+		</article>
+		<article id="Como" class="Escena">
+			<div class="contenido">
+				<p onclick="cambioEscena(0)" class="boton">Volver</p>
+			</div>
+		</article>
+		<article id="Juego" class="Escena">
+			<section class="Jugador">
+				<h3>Puntos:</h3>
+				<h3 id="puntos">0</h3>
+				<h3>Vidas:</h3>
+				<h3 id="vidas">3</h3>
+				<h3 class="pausa">||</h3>
+			</section>
+			<section class="Nivel">
+			</section>
+		</article>
 	</main>
 	<script type="text/javascript" src="js/juego.js"></script>
+	<script type="text/javascript" src="js/escenas.js"></script>
 </body>
 </html>

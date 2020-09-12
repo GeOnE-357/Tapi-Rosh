@@ -1,21 +1,30 @@
 const juego=document.getElementsByClassName("Nivel")[0];
 let puntos=document.getElementById("puntos");
 let vidas=document.getElementById("vidas");
-let pausa = false;
-let tapi = new Tapi(1);
+let boton=document.querySelector(".pausa");
+let modal = document.querySelector(".modal");
+let boton_modal=document.querySelector("#pausa-modal");
+let pausa;
+let tapi;
 let spawn;
-let enemigos=[];
+let enemigos;
 
 function Inicio()
 	{
+		pausa=false;
+		tapi= new Tapi(1);
+		vidas.innerHTML=tapi.vidas;
+		puntos.innerHTML=tapi.puntos;
 		Tablero();
 		tapi.dibujar();
+		enemigos=[];
 		spawn=setInterval(CrearEnemigos,800);
 	}
 
 
 function Tablero()
 	{
+		juego.innerHTML="";
 		for (let i=0; i < 6; i++)
 			{
 				for(let a=0; a<4; a++)
@@ -28,44 +37,75 @@ function Tablero()
 						juego.appendChild(div);
 					}
 			}
+
+
 	}
 
 
 function CrearEnemigos()
 	{
-		let factu = new Factura(numero(5),numero(5));
+		let factu = new Factura(numero(6),numero(5));
 		factu.id=enemigos.length;
 		factu.dibujar();
 		factu.tiempo=setInterval(function(){factu.bajar()},factu.velocidad);
 		enemigos.push(factu);
 	}
 
-
 function Pausar()
 	{
 		if(pausa==false)
 			{
 				pausa=true;
-				clearInterval(spawn);
+				modal.classList.add("revelar");
+				boton.classList.add("presionado");
+				if(tapi.vidas==0)
+					{
+						boton_modal.classList.remove("boton");
+						boton_modal.classList.add("desactivado");
+					}
 				for(let i=0; i<enemigos.length;i++)
 					{
-						clearInterval(enemigos[i].tiempo);
+						if(enemigos[i].fila<6)
+							{
+								clearInterval(enemigos[i].tiempo);										
+							}
+						
 					}
+				clearInterval(spawn);
 			}
 		else
 			{
-				pausa=false;
-				for(let i=0; i<enemigos.length;i++)
+				if(tapi.vidas>0)
 					{
-						enemigos[i].tiempo=setInterval(function(){enemigos[i].bajar()},enemigos[i].velocidad)	
+						pausa=false;
+						modal.classList.remove("revelar");
+						boton.classList.remove("presionado");
+						for(let i=0; i<enemigos.length;i++)
+							{	
+								if(enemigos[i].fila<5)
+									{
+										enemigos[i].tiempo=setInterval(function(){enemigos[i].bajar()},enemigos[i].velocidad);		
+									}
+							}
+						spawn=setInterval(CrearEnemigos,800);		
 					}
-				spawn=setInterval(CrearEnemigos,800);	
+					
 			}
 	}
 
 function FinJuego()
 	{
-		Pausar();
+		Pausar();	
+	}
+
+function Principio()
+	{
+		cambioEscena(0);
+		modal.classList.remove("revelar");
+		boton.classList.remove("presionado");
+		boton_modal.classList.add("boton");
+		boton_modal.classList.remove("desactivado");
+		juego.innerHTML="";
 	}
 
 //---------------- Objetos Tapi ----------------
@@ -133,6 +173,7 @@ function Factura(tip,col)
 			{
 				if(tapi.vidas>0 && pausa==false)
 					{
+						
 						borrar(this.columna, this.fila, "factura");
 						if(this.fila<5)
 							{
@@ -158,7 +199,7 @@ function Factura(tip,col)
 												FinJuego();
 											}
 									}
-								enemigos.splice(this.id, 1);
+								//enemigos.splice(this.id, 1);
 								this.parar();
 							}
 				}
@@ -190,7 +231,7 @@ function borrar(columna,fila,tipo)
 		let bloque=document.querySelector(grilla);
 		let elemento=grilla+" div."+tipo;
 		let hijo=document.querySelector(elemento);
-		bloque.removeChild(hijo);
+		bloque.removeChild(hijo);		
 	}
 
 function teclado(event)
@@ -202,14 +243,16 @@ function teclado(event)
   					{
   						tapi.mover(tapi.columna+1);		
   					}
-  				
   			}
   		if(event.keyCode==37 || event.keyCode==65)
   			{
   				if(tapi.columna>1)
 					{
 						tapi.mover(tapi.columna-1);		
-					}
-  						
+					}	
+  			}
+  		if(event.keyCode==32)
+  			{
+  				Pausar();
   			}
 	}

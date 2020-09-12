@@ -6,6 +6,11 @@
 		box-sizing: border-box;
 	}
 
+body
+	{
+		background-color: rgba(255, 186, 8,1);
+	}
+
 main
 	{
 		width: 100%;
@@ -13,7 +18,9 @@ main
 		display: grid;
 		justify-content: center;
 		align-content: center;
-		background-color: rgba(255, 186, 8,1);
+		background-image: url(../img/tramas/patron200x200blanco.png) ;
+		background-repeat: repeat;
+		background-size: 500px;
 	}
 
 .Escena
@@ -41,10 +48,11 @@ main
 		justify-content: center;
 	}
 
-.boton
+.boton, .pausa, .desactivado
 	{
 		background-color: rgba(255, 186, 8,1);
-		width: 300px;
+		max-width: 300px;
+		width: 100%;
 		height: 60px;
 		border-radius: 10px;
 		border: solid 5px rgba(244, 140, 6,1);
@@ -56,13 +64,14 @@ main
 		transition: all 0.25s ease;
 		color: white;
 		font-family: 'Rowdies', cursive;
+		cursor: pointer;
 	}
 
-.boton:hover
-	{
-		box-shadow: 0px 0px 0 0 rgba(232, 93, 4, 0);
-		transform: translate(0, 5px);
 
+.boton:hover, .pausa:hover 
+	{
+		box-shadow: 0 0 0 0 rgba(232, 93, 4, 0);
+		transform: translate(0, 5px);
 	}
 
 p
@@ -76,27 +85,35 @@ p
 		display: grid;
 		grid-template-columns: 2fr 1fr 2fr 1fr 1fr;
 		grid-template-rows: 1fr;
-		height: 30px;
+		height: 60px;
 		align-self: center;
+		justify-content: center;
 		font-family: 'Rowdies', cursive;
-		color: white;
+		background-color: rgba(255,255,255,1);
+		border-radius: 10px;
+		margin-bottom: 10px;
+	}
+
+.Jugador > h3
+	{
+		align-self: center;
+		justify-self:center;
 	}
 
 .pausa
 	{
-		width: 25px;
-		height: 25px;
-		border-radius: 50%;
-		background-color: white;
-		color: rgba(255, 186, 8,1);
-		font-size: 1em;
-		justify-content: center;
-		text-align: center; 
+		width: 40px;
+		height: 40px;
+		border: solid 3px rgba(244, 140, 6,1);
+		border-radius: 5px;
+		box-shadow: 0 3px 0 0 rgba(232, 93, 4, 1), 0 5px 5px 2px rgba(255,100,0,0.3);
+		margin: 0;
 	}
 
-.vidas, .puntos
+.presionado
 	{
-		justify-content: center; 
+		box-shadow: 0 0 0 0 rgba(232, 93, 4, 0), 0 0 0 0 rgba(255,100,0,0);
+		transform: translate(0, 5px);		
 	}
 
 .Nivel
@@ -111,7 +128,6 @@ p
 		background-repeat: no-repeat;
 		background-size: cover;
 		border-radius: 10px;
-		border: solid 5px rgba(244, 140, 6,1);
 	}
 
 .Nivel > div
@@ -130,6 +146,70 @@ p
 		background-size: cover;
 	}
 
+.modal
+	{
+		
+		position: absolute;
+		width:100vw;
+		height: 100vh;
+		background-color: rgba(0,0,0,0.2);
+		overflow: hidden;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		z-index: 5;
+		font-family: 'Rowdies', cursive;
+		color: white;
+	}
+
+.modal > .contenedor
+	{
+		background-color: rgba(255, 255, 255,1);
+		width: 300px;
+		height: 300px;
+		border-radius: 10px;
+		align-items: center;
+		justify-content: center;
+		padding: 10px;
+		margin: auto;
+		box-shadow:0 15px 15px 5px rgba(0,0,0,0.1);
+		transition: all 0.25s ease;
+	}
+
+.revelar
+	{
+		opacity: 1;
+		display: flex;
+	}
+
+.contenedor > .boton
+	{
+		box-shadow: 0 5px 0 0 rgba(232, 93, 4, 1), 0 10px 10px 2px rgba(0,0,0,0.1);
+	}
+
+.contenedor > .boton:hover
+	{
+		box-shadow:0 0 0 0 rgba(232, 93, 4, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+		transform: translate(0, 5px);
+	}
+
+.desactivado
+	{
+		background-color: rgba(214, 214, 177,1);
+		border: solid 5px rgba(135, 132, 112,1);
+		box-shadow: 0 5px 0 0 rgba(73, 67, 49, 1), 0 10px 10px 2px rgba(214,214,177,0.3);
+		max-width: 300px;
+		width: 100%;
+		height: 60px;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 10px 0;
+		color: white;
+		font-family: 'Rowdies', cursive;
+		cursor: auto; 
+	}
 
 .tapi
 	{

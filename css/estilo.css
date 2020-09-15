@@ -74,6 +74,11 @@ main
 		transform: translate(0, 5px);
 	}
 
+.pausa:hover 
+	{
+		transform: scale(0.8)
+	}
+
 p
 	{
 		font-size: 2em;
@@ -112,8 +117,7 @@ p
 
 .presionado
 	{
-		box-shadow: 0 0 0 0 rgba(232, 93, 4, 0), 0 0 0 0 rgba(255,100,0,0);
-		transform: translate(0, 5px);		
+		box-shadow: 0 0 0 0 rgba(232, 93, 4, 0), 0 0 0 0 rgba(255,100,0,0);		
 	}
 
 .Nivel
@@ -176,6 +180,19 @@ p
 		transition: all 0.25s ease;
 	}
 
+.modal > .contenedor > h3
+	{
+		color: black;
+		margin-bottom: 20px;
+	}
+
+#titulo-modal
+	{
+		color: rgba(255, 186, 8, 1);
+		text-align: center;
+		margin-bottom: 10px;
+	}
+
 .revelar
 	{
 		opacity: 1;
@@ -185,6 +202,7 @@ p
 .contenedor > .boton
 	{
 		box-shadow: 0 5px 0 0 rgba(232, 93, 4, 1), 0 10px 10px 2px rgba(0,0,0,0.1);
+		margin: 10px 0 20px 0;
 	}
 
 .contenedor > .boton:hover
@@ -195,20 +213,7 @@ p
 
 .desactivado
 	{
-		background-color: rgba(214, 214, 177,1);
-		border: solid 5px rgba(135, 132, 112,1);
-		box-shadow: 0 5px 0 0 rgba(73, 67, 49, 1), 0 10px 10px 2px rgba(214,214,177,0.3);
-		max-width: 300px;
-		width: 100%;
-		height: 60px;
-		border-radius: 10px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin: 10px 0;
-		color: white;
-		font-family: 'Rowdies', cursive;
-		cursor: auto; 
+		display: none;
 	}
 
 .tapi
@@ -243,4 +248,45 @@ p
 .fac5
 	{
 		background-image: url(../img/fac5.png);
+	}
+
+/*Creditos*/
+
+.creador
+	{
+		background-color: white;
+		border-radius: 10px;
+		padding: 10px;
+		max-width: 300px;
+		width: 100%;
+		margin-bottom: 20px;
+		cursor: pointer;
+	}
+
+.creador > a
+	{
+		text-decoration: none;
+		color:black;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+.creador img
+	{
+		width: 25px;
+		height: 25px;
+		margin-right: 10px;
+	}
+
+.creador p
+	{
+		font-size: 1.2em;
+		font-family: sans-serif;
+	}
+
+.creador:hover
+	{
+		transform: scale(1.08);
+		box-shadow:0 5px 5px 2px rgba(232, 93, 4, 0.5);
 	}

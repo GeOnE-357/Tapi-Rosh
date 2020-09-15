@@ -1,9 +1,13 @@
-const juego=document.getElementsByClassName("Nivel")[0];
-let puntos=document.getElementById("puntos");
-let vidas=document.getElementById("vidas");
-let boton=document.querySelector(".pausa");
-let modal = document.querySelector(".modal");
-let boton_modal=document.querySelector("#pausa-modal");
+const juego=document.querySelector(".Nivel");
+const puntos=document.querySelector("#puntos");
+const vidas=document.querySelector("#vidas");
+const boton=document.querySelector(".pausa");
+const modal = document.querySelector(".modal");
+const boton_modal=document.querySelector("#pausa-modal");
+const vidas_modal=document.querySelector("#vidas-modal");
+const puntos_modal=document.querySelector("#puntos-modal");
+const titulo_modal=document.querySelector("#titulo-modal");
+
 let pausa;
 let tapi;
 let spawn;
@@ -58,10 +62,14 @@ function Pausar()
 				pausa=true;
 				modal.classList.add("revelar");
 				boton.classList.add("presionado");
+				titulo_modal.innerHTML="Pausa";
+				puntos_modal.innerHTML=tapi.puntos;
+				vidas_modal.innerHTML=tapi.vidas;
 				if(tapi.vidas==0)
 					{
 						boton_modal.classList.remove("boton");
 						boton_modal.classList.add("desactivado");
+						titulo_modal.innerHTML="Fin del Juego";
 					}
 				for(let i=0; i<enemigos.length;i++)
 					{
@@ -194,6 +202,7 @@ function Factura(tip,col)
 										tapi.vidas-=1;
 										setTimeout(borrar,100,this.columna,this.fila,"factura");
 										vidas.innerHTML=tapi.vidas;
+										vidas_modal.innerHTML=tapi.vidas;
 										if(tapi.vidas==0)
 											{
 												FinJuego();

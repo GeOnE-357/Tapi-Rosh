@@ -90,7 +90,7 @@ p
 	}
 
 
-.instalar 
+.instalar, .error404 
 	{
 		align-self: start;
 		display: inline-flex;
@@ -113,10 +113,15 @@ p
 		margin-right: 10px;
 	}
 
-.instalar p
+.instalar p, .error404 p
 	{
 		font-size: 1.2em;
 		font-family: sans-serif;
+	}
+
+.error404
+	{
+		justify-content: center;
 	}
 
 .instalar:hover, .instalar.presionado
@@ -124,6 +129,11 @@ p
 		transform: scale(0.8);
 	}
 
+
+.error404
+	{
+		max-width: 300px;
+	}
 /*Juego*/
 
 .Jugador
@@ -337,8 +347,16 @@ a.creador
 .text-creditos
 	{
 		font-family: sans-serif;
+		text-align: justify-all;
 		font-size: 1.2em;
 		display: block;
 		width: 100%;
 		padding: 10px 20px;
+	}
+
+a.Lin
+	{
+		text-decoration: none;
+		font-family: 'Rowdies', cursive;
+		font-size: 2em;
 	}

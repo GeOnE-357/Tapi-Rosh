@@ -43,5 +43,6 @@ function SacarHover(objetivo)
 		if(objetivo.classList.contains("Pau")){Pausar();};
 		if(objetivo.classList.contains("Pri")){Principio();};
 		if(objetivo.classList.contains("Ins")){console.log("Ins")};
-		if(objetivo.classList.contains("creador")){window.open(objetivo.href, '_blank');}	
+		if(objetivo.classList.contains("creador")){window.open(objetivo.href);};
+		if(objetivo.classList.contains("Lin")){location.assign(objetivo.href);};	
 	}

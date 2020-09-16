@@ -53,21 +53,6 @@ main
 		width: 265px;
 	}
 
-.logo-creditos
-	{
-		width: 180px;
-		margin-bottom: 10px;
-	}
-
-.text-creditos
-	{
-		font-family: sans-serif;
-		font-size: 1.2em;
-		display: block;
-		width: 100%;
-		padding: 10px 20px;
-	}
-
 .boton, .pausa, .desactivado
 	{
 		background-color: rgba(255, 186, 8,1);
@@ -88,13 +73,13 @@ main
 	}
 
 
-.boton:hover, .pausa:hover 
+.boton:hover, .pausa:hover, .boton.presionado, .pausea.presionado
 	{
 		box-shadow: 0 0 0 0 rgba(232, 93, 4, 0);
 		transform: translate(0, 5px);
 	}
 
-.pausa:hover 
+.pausa:hover, .pausa.presionado
 	{
 		transform: scale(0.8)
 	}
@@ -103,6 +88,42 @@ p
 	{
 		font-size: 2em;
 	}
+
+
+.instalar 
+	{
+		align-self: start;
+		display: inline-flex;
+		align-items: center;
+		overflow: hidden;
+		max-width: 125px;
+		background-color: white;
+		border-radius: 10px;
+		padding: 10px;
+		margin: 10px 20px;
+		max-width: 130px;
+		width: 100%;
+		cursor: pointer;
+	}
+
+.instalar img
+	{
+		width: 25px;
+		height: 25px;
+		margin-right: 10px;
+	}
+
+.instalar p
+	{
+		font-size: 1.2em;
+		font-family: sans-serif;
+	}
+
+.instalar:hover, .instalar.presionado
+	{
+		transform: scale(0.8);
+	}
+
 /*Juego*/
 
 .Jugador
@@ -133,11 +154,6 @@ p
 		border-radius: 5px;
 		box-shadow: 0 3px 0 0 rgba(232, 93, 4, 1), 0 5px 5px 2px rgba(255,100,0,0.3);
 		margin: 0;
-	}
-
-.presionado
-	{
-		box-shadow: 0 0 0 0 rgba(232, 93, 4, 0), 0 0 0 0 rgba(255,100,0,0);		
 	}
 
 .Nivel
@@ -225,7 +241,7 @@ p
 		margin: 10px 0 20px 0;
 	}
 
-.contenedor > .boton:hover
+.contenedor > .boton:hover, .contenedor > .boton.presionado
 	{
 		box-shadow:0 0 0 0 rgba(232, 93, 4, 0), 0 0 0 0 rgba(0, 0, 0, 0);
 		transform: translate(0, 5px);
@@ -283,13 +299,15 @@ p
 		cursor: pointer;
 	}
 
-.creador > a
+a.creador
 	{
 		text-decoration: none;
 		color:black;
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
+		font-size: 1.2em;
+		font-family: sans-serif;
 	}
 
 .creador img
@@ -299,14 +317,28 @@ p
 		margin-right: 10px;
 	}
 
-.creador p
+.creador strong
 	{
-		font-size: 1.2em;
-		font-family: sans-serif;
+		margin-right: 5px;
 	}
 
-.creador:hover
+.creador:hover, .creador.presionado
 	{
 		transform: scale(1.08);
 		box-shadow:0 5px 5px 2px rgba(232, 93, 4, 0.5);
+	}
+
+.logo-creditos
+	{
+		width: 180px;
+		margin-bottom: 10px;
+	}
+
+.text-creditos
+	{
+		font-family: sans-serif;
+		font-size: 1.2em;
+		display: block;
+		width: 100%;
+		padding: 10px 20px;
 	}

@@ -18,41 +18,40 @@
 	<link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
 	<link rel="icon" href="img/iconos/ico32x32.png" type="image/gif" sizes="16x16">
 </head>
-<body>
+<body onclick="EventHandler()">
 	<main>
 		<section class="modal">
 				<section class="contenedor">
 					<h2 id="titulo-modal"></h2>
 					<h3>Puntos: <strong id="puntos-modal"></strong></h3>
 					<h3>Vidas: <strong id="vidas-modal"></strong></h3>
-					<p onclick="Pausar()" class="boton" id="pausa-modal">&#9658</p>
-					<p onclick="Principio()" class="boton">Inicio</p>
+					<p class="boton Hov Pau" id="pausa-modal">&#9658</p>
+					<p class="boton Hov Pri">Inicio</p>
 				</section>
 		</section>
 		<article id="Menu" class="Escena mostrar">
 			<div class="contenido">
 				<img class="logo" src="img/logo.png">
-				<p onclick="cambioEscena(3)" class="boton">Empezar</p>
-				<p onclick="cambioEscena(1)" class="boton">Creditos</p>
-				<p onclick="cambioEscena(2)" class="boton">Como jugar?</p>
+				<p class="boton Hov Es3">Empezar</p>
+				<p class="boton Hov Es1">Creditos</p>
+				<p class="boton Hov Es2">Como jugar?</p>
+				<div class="instalar Hov Ins">
+					<img src="img/creditos/icon-down.png"><p>Instalar</p>
+				</div>
 			</div>
 		</article>
 		<article id="Creditos" class="Escena">
 			<div class="contenido">
 				<img class="logo-creditos" src="img/logo.png">
 				<p class="text-creditos">Fue creado por:</p>
-				<div class="creador">
-					<a href="https://github.com/GeOnE-357/"><img src="img/creditos/icon-prog.png"><p><strong>Programador:</strong> GeOnE-357</p></a>
-				</div>
-				<div class="creador">
-					<a href="https://www.instagram.com/ailen.leite/"><img src="img/creditos/icon-art.png"><p><strong>Artista:</strong> Ailen Leite</p></a>
-				</div>
-				<p onclick="cambioEscena(0)" class="boton">Volver</p>
+					<a class="creador Hov" href="https://github.com/GeOnE-357/"><img src="img/creditos/icon-prog.png"><strong>Programador:</strong> GeOnE-357</a>
+					<a class="creador Hov" href="https://www.instagram.com/ailen.leite/"><img src="img/creditos/icon-art.png"><strong>Artista:</strong> Ailen Leite</a>
+				<p class="boton Hov Es0">Volver</p>
 			</div>
 		</article>
 		<article id="Como" class="Escena">
 			<div class="contenido">
-				<p onclick="cambioEscena(0)" class="boton">Volver</p>
+				<p class="boton Hov Es0">Volver</p>
 			</div>
 		</article>
 		<article id="Juego" class="Escena">
@@ -61,7 +60,7 @@
 				<h3 id="puntos">0</h3>
 				<h3>Vidas:</h3>
 				<h3 id="vidas">3</h3>
-				<h3 class="pausa" onclick="Pausar()">||</h3>
+				<h3 class="pausa Hov Pau">||</h3>
 			</section>
 			<section class="Nivel">
 			</section>
@@ -69,5 +68,6 @@
 	</main>
 	<script type="text/javascript" src="js/juego.js"></script>
 	<script type="text/javascript" src="js/escenas.js"></script>
+	<script type="text/javascript" src="js/touch.js"></script>
 </body>
 </html>

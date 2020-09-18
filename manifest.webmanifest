@@ -6,7 +6,7 @@
 	"orientation":"portrait-primary",
 	"theme_color":"#ffba08",
 	"background_color":"#ffba08",
-	"scope": "/",
+	"scope": "/Tapi-Rosh/",
 	"icons":[
 				{
 					"src":"img/iconos/ico192x192.png",

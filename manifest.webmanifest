@@ -1,12 +1,12 @@
 {
 	"name":"Tapi Rosh",
 	"short_name":"Tapi Rosh",
-	"start_url":"index.html",
+	"start_url":"https://geone-357.github.io/Tapi-Rosh/",
 	"display":"standalone",
 	"orientation":"portrait-primary",
 	"theme_color":"#ffba08",
 	"background_color":"#ffba08",
-	"scope": "/",
+	"scope": "/Tapi-Rosh/",
 	"icons":[
 				{
 					"src":"iconos/ico32x32.png",

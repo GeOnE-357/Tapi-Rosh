@@ -17,10 +17,11 @@ const limiteCache = (nombre, tamaño)=> {
 self.addEventListener("install", evt => {
 	console.log("El service worker se instalo.");
 	//1°-Guardamos en el cache, los elementos predefinidos de la pagina. Css, Javascripts y HTML.
-	caches.open(nombreCache).then((cache) => {
-					console.log("Definimos el cache predeterminado.");
+	evt.waitUntil(caches.open(nombreCache).then((cache) => {
+					//console.log("Definimos el cache predeterminado.");
 					cache.addAll(elementos);
 				})
+		);
 });
 
 
@@ -46,7 +47,7 @@ self.addEventListener("fetch", evt =>{
 	evt.respondWith(
 		caches.match(evt.request).then(cacheRes => {
 			return cacheRes || fetch(evt.request).then(fetchRes =>{
-				return caches.open(nombreCache).then(cache => {
+				return caches.open(dinamicoCache).then(cache => {
 					cache.put(evt.request.url, fetchRes.clone());
 					limiteCache(dinamicoCache, 5);
 					return fetchRes;

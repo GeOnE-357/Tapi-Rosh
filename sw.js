@@ -1,6 +1,28 @@
 const nombreCache="sitio-cache-v1";
 const dinamicoCache="sitio-dinamico-v1";
-const elementos=["/","/index.html","/fallback.html","/css/estilo.css","/css/animate.css","/js/app.js","/js/escenas.js","/js/juego.js","/js/touch.js","/manifest.json","/img/creditos/icon-art.png","/img/creditos/icon-down.png","/img/creditos/icon-prog.png","/img/tramas/patron200x200blanco.png","/img/back1.png","/img/fac1.png","/img/fac2.png","/img/fac3.png","/img/fac4.png","/img/fac5.png","/img/logo.png","/img/tapi.png","https://fonts.googleapis.com/css2?family=Rowdies&display=swap"];
+const elementos=["/",
+				"/index.html",
+				"/fallback.html",
+				"/css/estilo.css",
+				"/css/animate.css",
+				"/js/app.js",
+				"/js/escenas.js",
+				"/js/juego.js",
+				"/js/touch.js",
+				"/manifest.json",
+				"/img/creditos/icon-art.png",
+				"/img/creditos/icon-down.png",
+				"/img/creditos/icon-prog.png",
+				"/img/tramas/patron200x200blanco.png",
+				"/img/back1.png",
+				"/img/fac1.png",
+				"/img/fac2.png",
+				"/img/fac3.png",
+				"/img/fac4.png",
+				"/img/fac5.png",
+				"/img/logo.png",
+				"/img/tapi.png",
+				"https://fonts.googleapis.com/css2?family=Rowdies&display=swap"];
 
 //Funcion para limitar el cache
 const limiteCache = (nombre, tamaño)=> {

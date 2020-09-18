@@ -17,11 +17,10 @@ const limiteCache = (nombre, tamaño)=> {
 self.addEventListener("install", evt => {
 	console.log("El service worker se instalo.");
 	//1°-Guardamos en el cache, los elementos predefinidos de la pagina. Css, Javascripts y HTML.
-	evt.waitUntil(caches.open(nombreCache).then((cache) => {
+	caches.open(nombreCache).then((cache) => {
 					console.log("Definimos el cache predeterminado.");
 					cache.addAll(elementos);
 				})
-		);
 });
 
 

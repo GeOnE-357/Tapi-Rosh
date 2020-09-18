@@ -89,7 +89,6 @@ p
 		font-size: 2em;
 	}
 
-
 .instalar, .error404 
 	{
 		align-self: start;
@@ -129,11 +128,16 @@ p
 		transform: scale(0.8);
 	}
 
-
 .error404
 	{
 		max-width: 300px;
 	}
+
+.oculto
+	{
+		display: none;
+	}
+	
 /*Juego*/
 
 .Jugador

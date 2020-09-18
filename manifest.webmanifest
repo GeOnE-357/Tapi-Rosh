@@ -2,56 +2,23 @@
 	"name":"Tapi Rosh",
 	"short_name":"Tapi Rosh",
 	"start_url":"https://geone-357.github.io/Tapi-Rosh/",
-	"display":"standalone",
+	"display":"fullscreen",
 	"orientation":"portrait-primary",
 	"theme_color":"#ffba08",
 	"background_color":"#ffba08",
 	"scope": "/Tapi-Rosh/",
 	"icons":[
 				{
-					"src":"iconos/ico32x32.png",
-					"type":"image/png",
-					"sizes":"32x32"
-				},
-				{
-					"src":"iconos/ico48x48.png",
-					"type":"image/png",
-					"sizes":"48x48"
-				},
-				{
-					"src":"iconos/ico64x64.png",
-					"type":"image/png",
-					"sizes":"64x64"
-				},
-				{
-					"src":"iconos/ico96x96.png",
-					"type":"image/png",
-					"sizes":"96x96"
-				},
-				{
-					"src":"iconos/ico128x128.png",
-					"type":"image/png",
-					"sizes":"128x128"
-				},
-				{
-					"src":"iconos/ico144x144.png",
-					"type":"image/png",
-					"sizes":"144x144"
-				},
-				{
 					"src":"iconos/ico192x192.png",
 					"type":"image/png",
-					"sizes":"192x192"
-				},
-				{
-					"src":"iconos/ico256x256.png",
-					"type":"image/png",
-					"sizes":"256x256"
+					"sizes":"192x192",
+					"purpose": "any maskable"
 				},
 				{
 					"src":"iconos/ico512x512.png",
 					"type":"image/png",
-					"sizes":"512x512"
+					"sizes":"512x512",
+					"purpose": "any maskable"
 				}
 			]
 

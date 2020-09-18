@@ -1,6 +1,6 @@
 const nombreCache="sitio-cache-v1";
 const dinamicoCache="sitio-dinamico-v1";
-const elementos=["/","/index.html","/fallback.html","/css/estilo.css","/css/animate.css","/js/app.js","/js/escenas.js","/js/juego.js","/js/touch.js","/manifest.json","/img/creditos/icon-art.png","/img/creditos/icon-down.png","/img/creditos/icon-prog.png","/img/tramas/patron200x200blanco.png","/img/back1.png","/img/fac1.png","/img/fac2.png","/img/fac3.png","/img/fac4.png","/img/fac5.png","/img/logo.png","/img/tapi.png","https://fonts.googleapis.com/css2?family=Rowdies&display=swap"];
+const elementos=["/Tapi-Rosh/","/Tapi-Rosh/index.html","/Tapi-Rosh/fallback.html","/Tapi-Rosh/css/estilo.css","/Tapi-Rosh/css/animate.css","/Tapi-Rosh/js/app.js","/Tapi-Rosh/js/escenas.js","/Tapi-Rosh/js/juego.js","/Tapi-Rosh/js/touch.js","/Tapi-Rosh/manifest.json","/Tapi-Rosh/img/creditos/icon-art.png","/Tapi-Rosh/img/creditos/icon-down.png","/Tapi-Rosh/img/creditos/icon-prog.png","/Tapi-Rosh/img/tramas/patron200x200blanco.png","/Tapi-Rosh/img/back1.png","/Tapi-Rosh/img/fac1.png","/Tapi-Rosh/img/fac2.png","/Tapi-Rosh/img/fac3.png","/Tapi-Rosh/img/fac4.png","/Tapi-Rosh/img/fac5.png","/Tapi-Rosh/img/logo.png","/Tapi-Rosh/img/tapi.png","https://fonts.googleapis.com/css2?family=Rowdies&display=swap"];
 
 //Funcion para limitar el cache
 const limiteCache = (nombre, tamaño)=> {

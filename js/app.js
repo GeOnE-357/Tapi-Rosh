@@ -24,9 +24,9 @@ const InstalarPwa = () => {
     // Espera a la opcion del usuario.
     deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the A2HS prompt');
+          console.log('El usuario acepto el A2HS prompt');
         } else {
-          console.log('User dismissed the A2HS prompt');
+          console.log('El usuario no acepto el A2HS prompt');
         }
         deferredPrompt = null;
       });

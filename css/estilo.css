@@ -18,7 +18,7 @@ main
 		display: grid;
 		justify-content: center;
 		align-content: center;
-		background-image: url(../img/tramas/patron200x200blanco.png) ;
+		background-image: url(../img/tramas/patron200x200blanco.webp) ;
 		background-repeat: repeat;
 		background-size: 500px;
 	}
@@ -178,19 +178,12 @@ p
 		grid-template-rows: repeat(6, 85px);
 		grid-template-columns: repeat(4,85px);
 		align-self: start;
-		background-image: url(../img/back1.png);
+		background-image: url(../img/back1.webp);
 		background-repeat: no-repeat;
 		background-size: cover;
 		border-radius: 10px;
 	}
 
-.Nivel > div
-	{
-
-		border:dashed;
-		border-color: rgba(212, 175, 55,0.5);
-		border-width: 1px;	
-	}
 
 .factura
 	{
@@ -270,34 +263,34 @@ p
 	{
 		width: 100%;
 		height: 100%;
-		background-image: url(../img/tapi.png);
+		background-image: url(../img/tapi.webp);
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
 
 .fac1
 	{
-		background-image: url(../img/fac1.png);
+		background-image: url(../img/fac1.webp);
 	}
 
 .fac2
 	{
-		background-image: url(../img/fac2.png);
+		background-image: url(../img/fac2.webp);
 	}
 
 .fac3
 	{
-		background-image: url(../img/fac3.png);
+		background-image: url(../img/fac3.webp);
 	}
 
 .fac4
 	{
-		background-image: url(../img/fac4.png);
+		background-image: url(../img/fac4.webp);
 	}
 
 .fac5
 	{
-		background-image: url(../img/fac5.png);
+		background-image: url(../img/fac5.webp);
 	}
 
 /*Creditos*/

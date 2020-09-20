@@ -143,8 +143,15 @@ p
 		font-family: sans-serif;
 		font-size: 1em;
 		align-self:end;
-		margin-right: 20px;
+		margin-right: 60px;
+		color: white;
+		margin-bottom: 5px;
 	}
+
+#Creditos .version
+	{
+		margin-right: 100px;
+	}	
 
 /*Juego*/
 

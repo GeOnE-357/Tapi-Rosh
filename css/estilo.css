@@ -142,11 +142,10 @@ p
 	{
 		font-family: sans-serif;
 		font-size: 1em;
-		align-self:end;
+		align-self:flex-end;
 		margin-right: 60px;
 		color: white;
 		margin-bottom: 5px;
-		justify-content: end;
 	}
 
 #Creditos .version

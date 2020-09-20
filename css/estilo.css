@@ -146,6 +146,7 @@ p
 		margin-right: 60px;
 		color: white;
 		margin-bottom: 5px;
+		justify-content: end;
 	}
 
 #Creditos .version

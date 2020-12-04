@@ -1,5 +1,5 @@
-const nombreCache="sitio-cache-0.0.3";
-const dinamicoCache="sitio-dinamico-0.0.3";
+const nombreCache="sitio-cache-0.0.4";
+const dinamicoCache="sitio-dinamico-0.0.4";
 const elementos=["/Tapi-Rosh/","/Tapi-Rosh/index.html","/Tapi-Rosh/404.html","/Tapi-Rosh/css/estilo.css","/Tapi-Rosh/css/animate.css","/Tapi-Rosh/js/app.js","/Tapi-Rosh/js/escenas.js","/Tapi-Rosh/js/juego.js","/Tapi-Rosh/js/touch.js","/Tapi-Rosh/manifest.webmanifest","/Tapi-Rosh/img/creditos/icon-art.png","/Tapi-Rosh/img/creditos/icon-down.png","/Tapi-Rosh/img/creditos/icon-prog.png","/Tapi-Rosh/img/tramas/patron200x200blanco.png","/Tapi-Rosh/img/jugar/a.png","/Tapi-Rosh/img/jugar/d.png","/Tapi-Rosh/img/jugar/izq.png","/Tapi-Rosh/img/jugar/der.png","/Tapi-Rosh/img/jugar/mano.png","/Tapi-Rosh/img/back1.png","/Tapi-Rosh/img/fac1.png","/Tapi-Rosh/img/fac2.png","/Tapi-Rosh/img/fac3.png","/Tapi-Rosh/img/fac4.png","/Tapi-Rosh/img/fac5.png","/Tapi-Rosh/img/logo.png","/Tapi-Rosh/img/ups.png","/Tapi-Rosh/img/tapi.png","https://fonts.googleapis.com/css2?family=Rowdies&display=swap"];
 
 //Funcion para limitar el cache

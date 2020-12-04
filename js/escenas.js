@@ -20,7 +20,7 @@ const cambioEscena=(entrada)=>
 
 /*Puntajes de todos*/
 
-const renderPuntajes = (data, id) => {
+const renderPuntaje = (data, id) => {
 	const contenido = `<div class="tabla-item" id="${id}"><h3>1°</h3><h3>${data.nombre}</h3><h3>${data.puntos}</h3></div>`;
 	listado.innerHTML += contenido;
 

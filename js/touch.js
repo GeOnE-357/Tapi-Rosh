@@ -39,6 +39,7 @@ const SacarHover=(objetivo)=>
 		if(objetivo.classList.contains("Es1")){cambioEscena(1)};
 		if(objetivo.classList.contains("Es2")){cambioEscena(2)};
 		if(objetivo.classList.contains("Es3")){cambioEscena(3)};
+		if(objetivo.classList.contains("Es4")){cambioEscena(4)};
 		if(objetivo.classList.contains("Pau")){Pausar()};
 		if(objetivo.classList.contains("Pri")){Principio()};
 		if(objetivo.classList.contains("Ins")){InstalarPwa()};

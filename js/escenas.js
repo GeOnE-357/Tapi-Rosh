@@ -1,5 +1,7 @@
-let escenas=document.querySelectorAll(".Escena");
+const escenas=document.querySelectorAll(".Escena");
 let activo=0;
+const listado=document.querySelector(".cont-tabla");
+
 
 const cambioEscena=(entrada)=>
 	{
@@ -15,3 +17,11 @@ const cambioEscena=(entrada)=>
 				setTimeout(Inicio,1000);
 			}	
 	}
+
+/*Puntajes de todos*/
+
+const renderPuntajes = (data, id) => {
+	const contenido = `<div class="tabla-item" id="${id}"><h3>1°</h3><h3>${data.nombre}</h3><h3>${data.puntos}</h3></div>`;
+	listado.innerHTML += contenido;
+
+}

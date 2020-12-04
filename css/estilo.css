@@ -426,3 +426,62 @@ a.Lin
 		text-align: center;
 		font-size: 1.1em;
 	}
+
+/*Puntaje*/
+.cabe-tabla
+	{
+		width: 100%;
+		height: 40px;
+		display: inline-flex;
+		flex-wrap: nowrap;
+		background-color: white;
+		border-radius: 10px 10px 0 0; 
+		align-items: center;
+	}
+
+.cabe-tabla > h3:nth-child(1), .tabla-item > h3:nth-child(1)
+	{
+		width: 20%;
+	}
+
+.cabe-tabla > h3:nth-child(n+1), .tabla-item > h3:nth-child(n+1)
+	{
+		width: 40%;
+	}
+
+.cabe-tabla > h3, .tabla-item > h3
+	{
+		font-family: 'Rowdies';
+		text-align: center;
+	}
+
+.cont-tabla
+	{
+		min-height: 300px;
+		max-height: 415px;
+		margin: 0 0 10px 0;
+		width: 100%;
+		overflow: auto;
+	}
+
+.tabla-item
+	{
+		width: 100%;
+		display: inline-flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		border-bottom: 2px solid rgba(255,255,255,1);
+		padding: 10px;
+		background-color: rgba(255,255,255,0.3);
+	}
+
+/*.tabla-item:nth-child(1)
+	{
+		background-color: rgba(182, 145, 33, 1);
+	}
+
+.tabla-item:nth-child(2)
+	{
+		background-color: rgba(149, 149, 146, 1);
+	}
+*/

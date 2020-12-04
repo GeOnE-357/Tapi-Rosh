@@ -1,3 +1,5 @@
+let listado=document.querySelector(".cont-tabla");
+
 // base de datos offline
 db.enablePersistence()
 	.catch(err => {
@@ -24,3 +26,12 @@ db.collection('puntajes').onSnapshot((snapshot) => {
 	});
 
 })
+
+
+/*Puntajes de todos*/
+
+const renderPuntaje = (data, id) => {
+	const contenido = `<div class="tabla-item" id="${id}"><h3>1°</h3><h3>${data.nombre}</h3><h3>${data.puntos}</h3></div>`;
+	listado.innerHTML += contenido;
+
+}

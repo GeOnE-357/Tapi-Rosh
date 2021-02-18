@@ -25,7 +25,25 @@ main
 		animation-timing-function: linear;
 	}
 
-@keyframes bg-scrolling 
+@-webkit-keyframes bg-scrolling
+	{
+  		0% { background-position: 0 0; }
+  		100% { background-position: 500px 500px; }
+	}
+
+@-moz-keyframes bg-scrolling
+	{
+		0% { background-position: 0 0; }
+  		100% { background-position: 500px 500px; }	
+	}
+
+@-o-keyframes bg-scrolling
+	{
+  		0% { background-position: 0 0; }
+  		100% { background-position: 500px 500px; }
+	}
+
+@keyframes bg-scrolling,
 	{
   		0% { background-position: 0 0; }
   		100% { background-position: 500px 500px; }
